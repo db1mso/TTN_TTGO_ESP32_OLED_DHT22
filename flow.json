@@ -1,0 +1,173 @@
+[
+
+    {
+
+        "id": "4c7a88e6.79cc88",
+
+        "type": "ttn uplink",
+
+        "z": "b0e9e9d2.b679e8",
+
+        "name": "Uplink von TTN",
+
+        "app": "d8be485e.9e7fd8",
+
+        "dev_id": "INSERT HERE",
+
+        "field": "",
+
+        "x": 149,
+
+        "y": 833,
+
+        "wires": [
+
+            [
+
+                "b3acc137.768b3",
+
+                "7c201308.702a0c"
+
+            ]
+
+        ]
+
+    },
+
+    {
+
+        "id": "b3acc137.768b3",
+
+        "type": "function",
+
+        "z": "b0e9e9d2.b679e8",
+
+        "name": "Temperatur",
+
+        "func": "msg.payload = msg.payload.temperature;\nreturn [msg];",
+
+        "outputs": 1,
+
+        "noerr": 0,
+
+        "x": 394,
+
+        "y": 817,
+
+        "wires": [
+
+            [
+
+                "4f2f3301.f7de9c"
+
+            ]
+
+        ]
+
+    },
+
+    {
+
+        "id": "7c201308.702a0c",
+
+        "type": "function",
+
+        "z": "b0e9e9d2.b679e8",
+
+        "name": "Luftfeuchte",
+
+        "func": "msg.payload = msg.payload.humidity;\nreturn [msg];\n",
+
+        "outputs": 1,
+
+        "noerr": 0,
+
+        "x": 389,
+
+        "y": 867,
+
+        "wires": [
+
+            [
+
+                "68fcd8b8.7ec568"
+
+            ]
+
+        ]
+
+    },
+
+    {
+
+        "id": "4f2f3301.f7de9c",
+
+        "type": "debug",
+
+        "z": "b0e9e9d2.b679e8",
+
+        "name": "",
+
+        "active": true,
+
+        "tosidebar": true,
+
+        "console": false,
+
+        "tostatus": false,
+
+        "complete": "false",
+
+        "x": 589,
+
+        "y": 817,
+
+        "wires": []
+
+    },
+
+    {
+
+        "id": "68fcd8b8.7ec568",
+
+        "type": "debug",
+
+        "z": "b0e9e9d2.b679e8",
+
+        "name": "",
+
+        "active": true,
+
+        "tosidebar": true,
+
+        "console": false,
+
+        "tostatus": false,
+
+        "complete": "false",
+
+        "x": 586,
+
+        "y": 867,
+
+        "wires": []
+
+    },
+
+    {
+
+        "id": "d8be485e.9e7fd8",
+
+        "type": "ttn app",
+
+        "z": "",
+
+        "appId": "INSERT HERE",
+
+        "accessKey": "INSERT HERE",
+
+        "discovery": "discovery.thethingsnetwork.org:1900"
+
+    }
+
+]
