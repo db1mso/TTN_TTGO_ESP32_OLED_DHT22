@@ -1,0 +1,11 @@
+// Decoder für Bytes
+
+function Decoder(bytes, port) {
+  var humidity = (bytes[0] &lt;&lt; 8) | bytes[1];
+  var temperature = (bytes[2] &lt;&lt; 8) | bytes[3];
+
+  return {
+    humidity: humidity / 100,
+    temperature: temperature / 100
+  }
+}
